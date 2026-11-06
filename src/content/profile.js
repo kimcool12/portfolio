@@ -13,7 +13,7 @@ const profile = {
   // Put your photo in public/images and change the file name here
   photo: "/images/profile.jpeg",
   // Put your CV in public/cv.pdf
-  cvUrl: "/cv.pdf",
+  cvUrl: "/Olatunde-CV.docx",
 
   about:
     "Frontend developer with a Graphic Design background. I care about spacing, rhythm and motion as much as clean code.",
@@ -24,10 +24,9 @@ const profile = {
   ],
 
   // Contact
-  email: "youremail@example.com",
-  // Optional: paste a Formspree endpoint (https://formspree.io) so the form sends without opening email.
-  // Leave empty and the form opens the visitor's email app instead.
-  formEndpoint: "",
+  email: "olatundeafolayan419@gmail.com",
+  formEndpoint: "https://api.web3forms.com/submit",
+  web3formsKey: "import.meta.env.VITE_WEB3FORMS_KEY",
   footerText: "Send a message or find me online.",
 
   // Navbar links
