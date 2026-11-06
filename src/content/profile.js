@@ -26,7 +26,7 @@ const profile = {
   // Contact
   email: "olatundeafolayan419@gmail.com",
   formEndpoint: "https://api.web3forms.com/submit",
-  web3formsKey: "import.meta.env.VITE_WEB3FORMS_KEY",
+  web3formsKey: import.meta.env.VITE_WEB3FORMS_KEY,
   footerText: "Send a message or find me online.",
 
   // Navbar links
