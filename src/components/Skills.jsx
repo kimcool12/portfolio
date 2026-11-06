@@ -1,5 +1,5 @@
-import SectionHeader from './SectionHeader'
-import skills from '../content/skills'
+import SectionHeader from "./SectionHeader";
+import skills from "../content/skills";
 
 export default function Skills() {
   return (
@@ -10,13 +10,20 @@ export default function Skills() {
           <div key={group.title} className="skills__card">
             <h3>{group.title}</h3>
             <ul>
-              {group.items.map(({ name, icon: Icon }) => (
-                <li key={name} className="chip"><Icon aria-hidden="true" />{name}</li>
+              {group.items.map(({ name, icon: Icon, image }) => (
+                <li key={name} className="chip">
+                  {image ? (
+                    <img src={image} alt="" />
+                  ) : (
+                    <Icon aria-hidden="true" />
+                  )}
+                  {name}
+                </li>
               ))}
             </ul>
           </div>
         ))}
       </div>
     </section>
-  )
+  );
 }

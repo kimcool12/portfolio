@@ -13,7 +13,7 @@ const profile = {
   // Put your photo in public/images and change the file name here
   photo: "/images/profile.jpeg",
   // Put your CV in public/cv.pdf
-  cvUrl: "/Olatunde-CV.docx",
+  cvUrl: "/OlatundeCV.pdf",
 
   about:
     "Frontend developer with a Graphic Design background. I care about spacing, rhythm and motion as much as clean code.",

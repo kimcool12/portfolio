@@ -5,12 +5,19 @@
 // - featured: true  -> shows on the Home page (the first 3 featured are used).
 // - github / live: paste your links. Leave '' to hide that button.
 // - category: used for the filter tabs on the Projects page.
+export const filters = [
+  { label: "All" },
+  { label: "React", match: ["React"] },
+  { label: "Next.js", match: ["Next.js"] },
+  { label: "JavaScript", match: ["Js"] },
+  { label: "CSS", match: ["CSS", "Sass", "SCSS", "Tailwind"] },
+];
+
 const projects = [
   {
     title: "Fast React Pizza Co",
     description: "A static seamless online pizza ordering web application.",
-    category: "React",
-    tags: ["React", "Css", "Js"],
+    tags: ["React", "CSS", "Js"],
     image: "/images/projects/fastreact.png",
     github: "https://github.com/kimcool12/pizza-menu",
     live: "https://fast-pizza-blue.vercel.app/",
@@ -19,7 +26,6 @@ const projects = [
   {
     title: "Travel list",
     description: "Packing Planner App.",
-    category: "React",
     tags: ["React", "Js"],
     image: "/images/projects/travellist.png",
     github: "https://github.com/kimcool12/travel-list",
@@ -29,9 +35,8 @@ const projects = [
   {
     title: "Birmingham Food Basket",
     description: "Food ordering app.",
-    category: "Next.js",
-    tags: ["Next.js", "Prisma"],
-    image: "/images/projects/food-basket.svg",
+    tags: ["Next.js", "Prisma", "React", "Js"],
+    image: "/images/projects/foodbasket.png",
     github: "https://github.com/kimcool12/birmingham-food-basket",
     live: "",
     featured: true,
@@ -39,8 +44,7 @@ const projects = [
   {
     title: "Course Companion",
     description: "Interactive student study companion.",
-    category: "React",
-    tags: ["Scss", "Js", "CSS3"],
+    tags: ["Scss", "Js", "CSS"],
     image: "/images/projects/coursecomp.png",
     github: "https://github.com/kimcool12/Course.Companion",
     live: "https://coursecompanion.netlify.app/",
@@ -49,7 +53,6 @@ const projects = [
   {
     title: "Forkify",
     description: "Recipe search app.",
-    category: "JavaScript",
     tags: ["Js", "SCSS"],
     image: "/images/projects/forkify.png",
     github: "https://github.com/kimcool12/Forkify",
@@ -59,7 +62,6 @@ const projects = [
   {
     title: "Guessing game",
     description: "Interactive number guessing game.",
-    category: "JavaScript",
     tags: ["Tailwind", "Js", "CSS", "HTML"],
     image: "/images/projects/guessgame.png",
     github: "https://github.com/kimcool12/Guessing-game",
@@ -69,8 +71,7 @@ const projects = [
   {
     title: "Modupeola & Emozino Wedding Website",
     description: "Wedding celebration platform.",
-    category: "JavaScript",
-    tags: ["JavaScript", "Vercel", "CSS3"],
+    tags: ["Js", "Vercel", "CSS"],
     image: "/images/projects/mounion.png",
     github: "https://github.com/kimcool12/MonoUnion2025",
     live: "https://mono-union2025.vercel.app/",
@@ -79,8 +80,7 @@ const projects = [
   {
     title: "Trillo Booking App",
     description: "Modern hotel booking UI.",
-    category: "JavaScript",
-    tags: ["Sass/SCSS", "Flexbox", "CSS Grid", "HTML"],
+    tags: ["SCSS", "Flexbox", "CSS Grid", "HTML"],
     image: "/images/projects/trillo.png",
     github: "https://github.com/kimcool12/Trilo",
     live: "https://trilo-seven.vercel.app/",
@@ -89,8 +89,7 @@ const projects = [
   {
     title: "Mapty",
     description: "Workout tracker on a map.",
-    category: "JavaScript",
-    tags: ["Js", "Leaflet", "Css"],
+    tags: ["Js", "Leaflet", "CSS"],
     image: "/images/projects/maphy.png",
     github: "https://github.com/kimcool12/Maphy",
     live: "https://maphy-six.vercel.app/",
@@ -100,8 +99,7 @@ const projects = [
   {
     title: "Bijou Luxe",
     description: "E-commerce de bijoux modernes.",
-    category: "JavaScript",
-    tags: ["Tailwind", "Vercel", "Css"],
+    tags: ["Tailwind", "Vercel", "CSS"],
     image: "/images/projects/bijou.png",
     github: "https://github.com/kimcool12/Bijou-Luxe",
     live: "https://bijou-luxe.vercel.app/",
