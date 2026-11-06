@@ -1,0 +1,32 @@
+// Scroll progress line + mouse follower
+.progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 100;
+  background: color-mix(in srgb, var(--border) 50%, transparent);
+  &__fill {
+    height: 100%; background: var(--accent); transform-origin: left; transform: scaleX(0);
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+}
+
+.cursor {
+  position: fixed; inset: 0; pointer-events: none; z-index: 200;
+  > span { position: fixed; top: 0; left: 0; will-change: transform; }
+
+  &__glow::before {
+    content: ''; display: block; width: 320px; height: 320px; margin: -160px 0 0 -160px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-glow), transparent 65%); opacity: 0.55;
+  }
+  &__ring i {
+    position: absolute; left: -18px; top: -18px; width: 36px; height: 36px; border-radius: 50%;
+    border: 1.5px solid var(--accent-soft);
+    transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+  }
+  &__ring[data-hover='link'] i { transform: scale(1.8); background: color-mix(in srgb, var(--accent) 18%, transparent); }
+  &__ring[data-hover='card'] i { transform: scale(2.4); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+  &__dot::before {
+    content: ''; display: block; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--accent-soft);
+  }
+}
+
+// Hide on touch screens
+@media (pointer: coarse) { .cursor { display: none; } }

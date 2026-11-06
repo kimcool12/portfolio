@@ -1,0 +1,5 @@
+$bp-md: 900px;
+$bp-sm: 600px;
+
+@mixin md { @media (max-width: $bp-md) { @content; } }
+@mixin sm { @media (max-width: $bp-sm) { @content; } }

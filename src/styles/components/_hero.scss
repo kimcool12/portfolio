@@ -1,0 +1,45 @@
+@use '../mixins' as *;
+
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes pop { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: none; } }
+
+.hero {
+  position: relative; display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 64px;
+  padding-block: clamp(48px, 8vw, 96px);
+
+  &::before {
+    content: ''; position: absolute; z-index: -1; right: -120px; top: -120px; width: 520px; height: 520px;
+    border-radius: 50%; background: var(--accent); opacity: 0.14; filter: blur(120px);
+  }
+
+  &__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
+  &__copy > * { animation: rise 0.7s var(--ease) both; animation-delay: calc(var(--i, 0) * 90ms); }
+
+  &__title {
+    font-size: clamp(2.6rem, 6.4vw, 4rem); line-height: 1.1; letter-spacing: -0.02em;
+    span { display: block; }
+    em { font-style: normal; color: var(--accent-soft); }
+  }
+  &__roles { font-family: var(--font-mono); font-size: 0.95rem; color: var(--accent-soft); }
+  &__intro { font-size: 1.15rem; color: var(--text-muted); max-width: 34rem; }
+  &__cta { display: flex; flex-wrap: wrap; gap: 16px; }
+
+  &__photo {
+    justify-self: center; width: min(400px, 100%); aspect-ratio: 1; border-radius: 50%;
+    overflow: hidden; border: 2px solid var(--accent); box-shadow: 0 0 60px var(--accent-glow);
+    background: var(--surface-2); animation: pop 0.9s var(--ease) 0.2s both;
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+
+  @include md {
+    grid-template-columns: 1fr; gap: 48px;
+    &__photo { order: -1; width: min(260px, 70%); justify-self: start; }
+  }
+}
+
+.pill {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);
+  i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+}

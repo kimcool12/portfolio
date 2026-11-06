@@ -1,0 +1,37 @@
+// Colours match the Figma design. Dark is the default theme.
+:root {
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 20px;
+}
+
+:root,
+[data-theme='dark'] {
+  --bg: #0b0b10;
+  --surface: #14141c;
+  --surface-2: #1c1c27;
+  --border: #2a2a3c;
+  --text: #f4f4f8;
+  --text-muted: #9a9ab2;
+  --accent: #8b5cf6;
+  --accent-soft: #a78bfa;
+  --accent-on: #ffffff;
+  --accent-glow: rgb(139 92 246 / 0.45);
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: #f7f7fb;
+  --surface: #ffffff;
+  --surface-2: #eeeef6;
+  --border: #ddddea;
+  --text: #12121a;
+  --text-muted: #5c5c73;
+  --accent: #7c3aed;
+  --accent-soft: #8b5cf6;
+  --accent-on: #ffffff;
+  --accent-glow: rgb(124 58 237 / 0.35);
+  color-scheme: light;
+}

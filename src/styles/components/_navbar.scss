@@ -1,0 +1,38 @@
+@use '../mixins' as *;
+
+.navbar {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+
+  &__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 72px; }
+  &__logo { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; }
+  &__links { display: flex; gap: 36px; }
+  &__links a {
+    position: relative; color: var(--text-muted); font-weight: 500; font-size: 0.95rem;
+    transition: color 0.25s var(--ease);
+    &::after {
+      content: ''; position: absolute; left: 0; bottom: -6px; width: 100%; height: 2px;
+      background: var(--accent); transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s var(--ease);
+    }
+    &:hover, &.is-active { color: var(--text); }
+    &:hover::after, &.is-active::after { transform: scaleX(1); }
+    &.is-active { color: var(--accent-soft); }
+  }
+  &__actions { display: flex; align-items: center; gap: 12px; }
+  &__menu { display: none; }
+
+  @include md {
+    &__menu { display: grid; }
+    &__cta { display: none; }
+    &__links {
+      position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; gap: 0;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      max-height: 0; overflow: hidden; transition: max-height 0.35s var(--ease);
+      &.is-open { max-height: 360px; }
+      a { padding: 16px 24px; &::after { display: none; } }
+    }
+  }
+}
