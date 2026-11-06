@@ -49,7 +49,7 @@ const skills = [
     ],
   },
   {
-    title: "Also",
+    title: "Others",
     items: [
       { name: "Responsive design", icon: LuSmartphone },
       { name: "REST APIs", icon: TbApi },
